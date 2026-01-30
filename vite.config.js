@@ -1,10 +1,8 @@
 import { defineConfig } from 'vite';
 
-// GitHub Pages serves at https://<user>.github.io/<repo>/, so base must be '/<repo>/'
-const base = process.env.GITHUB_PAGES === 'true' ? '/MoltenMotion/' : '/';
-
+// Relative base: one build works for both *.github.io/MoltenMotion/ and custom domain (moltenmotion.in at root)
 export default defineConfig({
-  base,
+  base: './',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',

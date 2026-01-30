@@ -112,14 +112,14 @@ jobs:
 2. In repo **Settings → Pages**, set **Source** to **GitHub Actions**.
 3. Push to `main`; the workflow builds and deploys `dist/` to GitHub Pages.
 
-### Base path (site in a subpath)
+### Base path (GitHub Pages + custom domain)
 
-The site is served at **https://mohitnegi1997.github.io/MoltenMotion/** (repo name as subpath). The project is already configured:
+The build uses **`base: './'`** (relative) so one build works for both:
 
-- **`vite.config.js`** uses `base: '/MoltenMotion/'` when `GITHUB_PAGES=true` (set in the deploy workflow), so all JS, CSS, and asset URLs load correctly on GitHub Pages.
-- **Local dev** (`npm run dev`) uses `base: '/'`, so you don’t need to open a subpath locally.
+- **https://mohitnegi1997.github.io/MoltenMotion/** (project site subpath)
+- **https://moltenmotion.in/** (custom domain at root)
 
-No extra setup needed; push to `main` and the workflow builds and deploys with the correct base.
+Assets and data paths resolve relative to the current URL, so CSS, JS, and JSON load correctly on either URL. No extra setup; push to `main` to deploy.
 
 ## Features
 
