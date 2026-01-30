@@ -2,15 +2,20 @@
    ANIMATIONS — Scroll entrance, stagger, parallax
    ============================================ */
 
-/* Entrance: elements start slightly below and faded */
+/* Default: visible so content shows even if JS fails to load (e.g. custom domain, 404) */
 [data-animate] {
-  opacity: 0;
-  transform: translateY(24px);
+  opacity: 1;
   transition: opacity var(--duration-slow) var(--ease-out),
     transform var(--duration-slow) var(--ease-out);
 }
 
-[data-animate].is-visible {
+/* When JS runs, we add .animations-ready and hide until in view */
+html.animations-ready [data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+html.animations-ready [data-animate].is-visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -27,29 +32,29 @@
 [data-animate][data-delay="9"] { transition-delay: 720ms; }
 
 /* Slide from left (Story card) */
-[data-animate="slide-left"] {
+html.animations-ready [data-animate="slide-left"] {
   transform: translateX(-32px) translateY(0);
 }
 
-[data-animate="slide-left"].is-visible {
+html.animations-ready [data-animate="slide-left"].is-visible {
   transform: translateX(0) translateY(0);
 }
 
 /* Slide from right (Story card) */
-[data-animate="slide-right"] {
+html.animations-ready [data-animate="slide-right"] {
   transform: translateX(32px) translateY(0);
 }
 
-[data-animate="slide-right"].is-visible {
+html.animations-ready [data-animate="slide-right"].is-visible {
   transform: translateX(0) translateY(0);
 }
 
 /* Scale-in for hero cards */
-[data-animate="scale-in"] {
+html.animations-ready [data-animate="scale-in"] {
   transform: scale(0.96) translateY(16px);
 }
 
-[data-animate="scale-in"].is-visible {
+html.animations-ready [data-animate="scale-in"].is-visible {
   transform: scale(1) translateY(0);
 }
 

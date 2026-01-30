@@ -4,6 +4,9 @@
  */
 
 import { runAnimations, initScrollAnimations } from './animations.js';
+
+// Enable scroll-based entrance animations (hides [data-animate] until in view)
+document.documentElement.classList.add('animations-ready');
 import { getCart, addToCart, removeFromCart, getCartCount, getCartTotal, clearCart, subscribeToCart } from './cart.js';
 import { fetchProducts, fetchCategories, fetchTestimonials, productsByCategory } from './products.js';
 
