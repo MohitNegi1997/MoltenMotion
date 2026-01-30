@@ -5,7 +5,7 @@
 
 import { runAnimations, initScrollAnimations } from './animations.js';
 import { getCart, addToCart, removeFromCart, getCartCount, getCartTotal, clearCart, subscribeToCart } from './cart.js';
-import { fetchProducts, fetchCategories, productsByCategory } from './products.js';
+import { fetchProducts, fetchCategories, fetchTestimonials, productsByCategory } from './products.js';
 
 // ---------- Cart UI ----------
 const cartDrawer = document.getElementById('cart-drawer');
@@ -190,8 +190,7 @@ tabTriggers.forEach((tab) => {
 // ---------- Carousel (testimonials) ----------
 async function initCarousel() {
   try {
-    const res = await fetch('/data/testimonials.json');
-    const list = await res.json();
+    const list = await fetchTestimonials();
     const track = document.getElementById('carousel-track');
     if (!track) return;
 
@@ -207,7 +206,7 @@ async function initCarousel() {
     track.innerHTML = fragment + fragment;
   } catch (_) {
     const track = document.getElementById('carousel-track');
-    if (track) track.innerHTML = '<p class="body">Loading…</p>';
+    if (track) track.innerHTML = '<p class="body">Could not load testimonials.</p>';
   }
 }
 

@@ -23,7 +23,8 @@
  * @property {string} image
  */
 
-const DATA_BASE = '/data';
+// Respect Vite base (e.g. /MoltenMotion/ on GitHub Pages) so /data/... loads correctly
+const DATA_BASE = (import.meta.env.BASE_URL || '/') + 'data';
 
 /**
  * @returns {Promise<Product[]>}
@@ -60,4 +61,13 @@ export function productsByCategory(categoryId, products) {
  */
 export function getProductById(id, products) {
   return products.find((p) => p.id === id);
+}
+
+/**
+ * @returns {Promise<{ avatar: string, quote: string, name: string }[]>}
+ */
+export async function fetchTestimonials() {
+  const res = await fetch(`${DATA_BASE}/testimonials.json`);
+  if (!res.ok) throw new Error('Failed to load testimonials');
+  return res.json();
 }
