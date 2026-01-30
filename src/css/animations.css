@@ -1,0 +1,171 @@
+/* ============================================
+   ANIMATIONS — Scroll entrance, stagger, parallax
+   ============================================ */
+
+/* Entrance: elements start slightly below and faded */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays (applied via JS or inline style) */
+[data-animate][data-delay="1"] { transition-delay: 80ms; }
+[data-animate][data-delay="2"] { transition-delay: 160ms; }
+[data-animate][data-delay="3"] { transition-delay: 240ms; }
+[data-animate][data-delay="4"] { transition-delay: 320ms; }
+[data-animate][data-delay="5"] { transition-delay: 400ms; }
+[data-animate][data-delay="6"] { transition-delay: 480ms; }
+[data-animate][data-delay="7"] { transition-delay: 560ms; }
+[data-animate][data-delay="8"] { transition-delay: 640ms; }
+[data-animate][data-delay="9"] { transition-delay: 720ms; }
+
+/* Slide from left (Story card) */
+[data-animate="slide-left"] {
+  transform: translateX(-32px) translateY(0);
+}
+
+[data-animate="slide-left"].is-visible {
+  transform: translateX(0) translateY(0);
+}
+
+/* Slide from right (Story card) */
+[data-animate="slide-right"] {
+  transform: translateX(32px) translateY(0);
+}
+
+[data-animate="slide-right"].is-visible {
+  transform: translateX(0) translateY(0);
+}
+
+/* Scale-in for hero cards */
+[data-animate="scale-in"] {
+  transform: scale(0.96) translateY(16px);
+}
+
+[data-animate="scale-in"].is-visible {
+  transform: scale(1) translateY(0);
+}
+
+/* Parallax container — movement applied via JS */
+[data-parallax] {
+  will-change: transform;
+}
+
+/* Carousel: infinite scroll (handled in JS) */
+.carousel-track {
+  display: flex;
+  gap: var(--space-lg);
+  animation: carousel-scroll 40s linear infinite;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes carousel-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Tab underline (Vision section) */
+.tab-list {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.tab-trigger {
+  padding: var(--space-md) var(--space-lg);
+  font-weight: 600;
+  color: var(--text-muted);
+  position: relative;
+  bottom: -2px;
+  transition: color var(--duration-fast);
+}
+
+.tab-trigger:hover {
+  color: var(--text-primary);
+}
+
+.tab-trigger.is-active {
+  color: var(--text-primary);
+}
+
+.tab-trigger.is-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 1px;
+}
+
+/* Checkout modal (mock) */
+.checkout-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.checkout-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.checkout-modal__box {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  max-width: 420px;
+  width: 100%;
+  padding: var(--space-2xl);
+  transform: scale(0.98) translateY(8px);
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.checkout-modal.is-open .checkout-modal__box {
+  transform: scale(1) translateY(0);
+}
+
+.checkout-modal__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+}
+
+.checkout-modal__text {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.checkout-modal__close {
+  width: 100%;
+  padding: var(--space-md) var(--space-xl);
+  font-weight: 600;
+  background: var(--text-primary);
+  color: var(--bg-card);
+  border-radius: var(--radius-full);
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.checkout-modal__close:hover {
+  transform: translateY(-2px);
+}

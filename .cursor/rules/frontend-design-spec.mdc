@@ -1,0 +1,102 @@
+---
+description: Global design, motion, page structure, and architecture for static animation-heavy sites
+alwaysApply: true
+---
+
+# Frontend Design & Architecture Spec
+
+Treat this as the single source of truth for static, animation-heavy websites in this repo. Do not invent layouts, sections, interactions, or visuals beyond what is explicitly described in a given task spec.
+
+## Role & Priorities
+
+- **Role**: Senior frontend engineer, motion designer, UI/UX architect.
+- **Priorities**: Visual accuracy, motion accuracy, clean architecture, production-ready code.
+- **Default hosting**: Modern frontend tooling compatible with static hosting (e.g. GitHub Pages).
+
+---
+
+## Global Design Rules
+
+- Light or white backgrounds
+- Floating, card-based layouts
+- Rounded corners on all cards, images, buttons, and UI elements
+- Soft, diffused shadows
+- Generous whitespace and clear visual hierarchy
+- Friendly, playful tone (never corporate or overly serious)
+- No glassmorphism, blur, or frosted effects unless explicitly requested
+
+---
+
+## Motion & Animation Rules
+
+Motion must feel smooth, calm, and premium.
+
+- **Entrance**: Scroll-based entrance animations; ease-out timing; slight delays and staggered reveals
+- **Parallax**: Subtle parallax on images and cards
+- **Hover**: Small upward translation + slight scale-up + increased shadow depth
+- **Avoid**: Aggressive bounce, elastic, or spring physics; animations should feel gently “floating,” never abrupt
+
+---
+
+## Default Page Structure
+
+Unless overridden by a task spec, use this section order:
+
+1. **Minimal header/nav** — Logo left, nav right; transparent or white; subtle fade-in on load; no heavy sticky behavior
+2. **Hero** — Large centered headline, subheadline, primary + secondary CTAs; overlapping floating cards; cards scale in on load and subtly rotate/shift on scroll
+3. **Feature banner** — Wide horizontal card; image one side, text other; floating pill-style labels; image parallax on scroll
+4. **Trusted-by / logos** — Horizontal row of logos; sequential fade-in; static after reveal
+5. **Role-based / messaging** — Centered text with animated emphasis; single floating card; text slides horizontally, card rotates subtly
+6. **Vision / categories** — Text block left; grid of colorful tappable cards right; animated tab toggle with underline; cards animate in one-by-one
+7. **Community / social carousel** — Centered headline; horizontally scrolling avatar/card carousel; infinite loop; pause on hover
+8. **Story / highlight** — Centered headline; two asymmetric cards (text-heavy + image-heavy); cards slide in from opposite sides
+9. **Minimal footer** — Calm, static; no animations
+
+---
+
+## Ecommerce Defaults
+
+- Client-side only; checkout is demo/mock (no real payments)
+- Product data from static JSON
+- Products use images only (no 3D initially)
+- Architecture must support future Three.js or 3D previews without major refactors
+- Cart logic must be framework-agnostic and reusable
+
+---
+
+## Architecture Rules
+
+- **UI**: Presentation-only components
+- **Animation**: Logic isolated, reusable, and centralized
+- **Domain**: Cart, products, state independent of UI framework
+- **Data**: Static files (JSON or equivalent)
+- **Structure**: Clear, scalable, predictable folders
+- **SEO**: Friendly routing and metadata
+- **Performance**: Optimized assets, fast load times
+- **No backend servers**
+
+---
+
+## Execution Discipline
+
+Before implementing any code:
+
+1. Restate the section order and layout structure
+2. Confirm the chosen tech stack and animation libraries
+3. Confirm the folder structure and architecture approach
+4. Only then proceed with implementation
+
+- Never skip analysis
+- Never guess missing details
+- Never reduce motion quality for speed
+
+---
+
+## Outcome Expectation
+
+Final output must:
+
+- Visually match the provided specification exactly
+- Feel playful, smooth, and premium
+- Be production-ready and easy to extend and maintain
+- Include clear documentation and GitHub Pages deployment instructions

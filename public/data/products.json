@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1",
+    "name": "Cloud Nine Sweater",
+    "slug": "cloud-nine-sweater",
+    "price": 89,
+    "categoryId": "apparel",
+    "image": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=600&fit=crop",
+    "description": "Soft, oversized knit for cozy days."
+  },
+  {
+    "id": "2",
+    "name": "Desert Dunes Jacket",
+    "slug": "desert-dunes-jacket",
+    "price": 145,
+    "categoryId": "apparel",
+    "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&h=600&fit=crop",
+    "description": "Lightweight layer for every adventure."
+  },
+  {
+    "id": "3",
+    "name": "Meadow Tote",
+    "slug": "meadow-tote",
+    "price": 68,
+    "categoryId": "accessories",
+    "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&h=600&fit=crop",
+    "description": "Room for everything, goes everywhere."
+  },
+  {
+    "id": "4",
+    "name": "Sunrise Mug Set",
+    "slug": "sunrise-mug-set",
+    "price": 42,
+    "categoryId": "home",
+    "image": "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600&h=600&fit=crop",
+    "description": "Set of two. Start your morning right."
+  },
+  {
+    "id": "5",
+    "name": "Nightfall Candle",
+    "slug": "nightfall-candle",
+    "price": 34,
+    "categoryId": "home",
+    "image": "https://images.unsplash.com/photo-1602874801006-4e411c58f7d4?w=600&h=600&fit=crop",
+    "description": "Warm amber and cedar. Long burn."
+  },
+  {
+    "id": "6",
+    "name": "Peak Performance Sneakers",
+    "slug": "peak-performance-sneakers",
+    "price": 128,
+    "categoryId": "apparel",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop",
+    "description": "Comfort and style for the everyday."
+  }
+]

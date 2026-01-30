@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Molten Motion — Curated goods for everyday life. Shop apparel, accessories, and home." />
+  <title>Molten Motion — Curated Goods</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/css/base.css" />
+  <link rel="stylesheet" href="/src/css/layout.css" />
+  <link rel="stylesheet" href="/src/css/components.css" />
+  <link rel="stylesheet" href="/src/css/animations.css" />
+  <link rel="stylesheet" href="/src/css/sections.css" />
+</head>
+<body>
+  <!-- 1. Minimal header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="#" class="site-logo">Molten Motion</a>
+      <nav class="site-nav">
+        <a href="#shop">Shop</a>
+        <a href="#shop">Categories</a>
+        <button type="button" class="cart-trigger" aria-label="Open cart">
+          Cart <span class="cart-count" id="cart-count" aria-hidden="true">0</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. Hero -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero__content section-header">
+          <h1 class="hero-title" data-animate data-delay="1">Curated for the everyday.</h1>
+          <p class="body-lg hero__subhead" data-animate data-delay="2">Thoughtful goods for home, style, and life. No clutter — just what you’ll love.</p>
+          <div class="hero__ctas" data-animate data-delay="3">
+            <a href="#shop" class="btn btn--primary">Shop now</a>
+            <a href="#shop" class="btn btn--secondary">Browse categories</a>
+          </div>
+        </div>
+        <div class="hero__cards">
+          <div class="hero__card hero__card--1">
+            <div class="card card--hover" data-animate="scale-in" data-delay="2">
+              <div class="card__media" data-parallax>
+                <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&h=400&fit=crop" alt="" width="400" height="400" />
+              </div>
+              <div class="card__body">
+                <span class="pill">New</span>
+                <p class="body" style="margin-top: 8px;">Cloud Nine Sweater</p>
+              </div>
+            </div>
+          </div>
+          <div class="hero__card hero__card--2">
+            <div class="card card--hover" data-animate="scale-in" data-delay="3">
+              <div class="card__media" data-parallax>
+                <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=320&h=320&fit=crop" alt="" width="320" height="320" />
+              </div>
+              <div class="card__body">
+                <p class="body">Meadow Tote</p>
+              </div>
+            </div>
+          </div>
+          <div class="hero__card hero__card--3">
+            <div class="card card--hover" data-animate="scale-in" data-delay="4">
+              <div class="card__media" data-parallax>
+                <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=280&h=280&fit=crop" alt="" width="280" height="280" />
+              </div>
+              <div class="card__body">
+                <p class="body">Sunrise Mug Set</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Feature banner -->
+    <section class="feature-banner" id="feature">
+      <div class="container">
+        <div class="card layout-feature layout-feature--reverse">
+          <div class="layout-feature__media feature-banner__media" data-animate data-parallax>
+            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&h=500&fit=crop" alt="Desert Dunes Jacket" width="600" height="500" />
+          </div>
+          <div class="layout-feature__content feature-banner__content" data-animate data-delay="2">
+            <span class="pill">Featured</span>
+            <h2 class="section-title" style="margin-top: 12px;">Desert Dunes Jacket</h2>
+            <p class="body-lg" style="margin-top: 12px;">Lightweight layer for every adventure. Soft fabric, clean lines, goes with everything.</p>
+            <a href="#shop" class="btn btn--primary" style="margin-top: 24px;">Shop this style</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Trusted-by / logos -->
+    <section class="trusted-by" aria-label="Trusted by">
+      <div class="container">
+        <p class="caption section-header" data-animate>Secure checkout · Free returns</p>
+        <div class="trusted-by__logos" data-animate>
+          <span class="trusted-by__logo">Visa</span>
+          <span class="trusted-by__logo">Mastercard</span>
+          <span class="trusted-by__logo">PayPal</span>
+          <span class="trusted-by__logo">Apple Pay</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Role-based / messaging -->
+    <section class="messaging" id="messaging">
+      <div class="container layout-feature">
+        <div class="layout-feature__content messaging__text" data-animate>
+          <h2 class="section-title">Curated for you.</h2>
+          <p class="body-lg" style="margin-top: 16px;">We pick pieces that last — in style and in use. No trends, no noise.</p>
+        </div>
+        <div class="layout-feature__media messaging__card-wrap" data-animate="slide-right" data-delay="2">
+          <div class="card card--hover" data-parallax>
+            <div class="card__media">
+              <img src="https://images.unsplash.com/photo-1602874801006-4e411c58f7d4?w=400&h=400&fit=crop" alt="Nightfall Candle" width="400" height="400" />
+            </div>
+            <div class="card__body">
+              <p class="body">Nightfall Candle</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Vision / categories (shop grid) -->
+    <section class="vision" id="shop">
+      <div class="container layout-split">
+        <div class="vision__intro" data-animate>
+          <h2 class="section-title">Shop by category</h2>
+          <p class="body-lg" style="margin-top: 16px;">Jump to what you love. Each category is hand-picked.</p>
+          <div class="tab-list" role="tablist" aria-label="Categories">
+            <button type="button" class="tab-trigger is-active" role="tab" data-tab="all" aria-selected="true">All</button>
+            <button type="button" class="tab-trigger" role="tab" data-tab="apparel" aria-selected="false">Apparel</button>
+            <button type="button" class="tab-trigger" role="tab" data-tab="accessories" aria-selected="false">Accessories</button>
+            <button type="button" class="tab-trigger" role="tab" data-tab="home" aria-selected="false">Home</button>
+          </div>
+        </div>
+        <div class="vision__grid" id="category-grid">
+          <!-- Filled by JS from products.json -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Community carousel -->
+    <section class="community" id="community">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <h2 class="section-title">Loved by people like you</h2>
+          <p class="body-lg">Real words from real customers.</p>
+        </div>
+        <div class="community__carousel-wrap" data-animate>
+          <div class="community__carousel" aria-label="Testimonials">
+            <div class="carousel-track" id="carousel-track">
+              <!-- Filled by JS; duplicated for infinite loop -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Story / highlight -->
+    <section class="story" id="story">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <h2 class="section-title">Our story</h2>
+        </div>
+        <div class="layout-asymmetric">
+          <div class="card story__card story__card--text" data-animate="slide-left">
+            <div class="card__body" style="padding: var(--space-2xl);">
+              <p class="body-lg">We started with a simple idea: fewer, better things. Everything we sell is something we’d keep in our own home or closet.</p>
+              <p class="body" style="margin-top: 16px;">No flash sales, no clutter — just a small, rotating selection you can trust.</p>
+            </div>
+          </div>
+          <div class="card story__card story__card--image" data-animate="slide-right" data-delay="2">
+            <div class="card__media" style="aspect-ratio: 4/3;">
+              <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=450&fit=crop" alt="Our space" width="600" height="450" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Minimal footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#shop">Shop</a>
+          <a href="#shop">Categories</a>
+          <a href="#story">Our story</a>
+          <a href="#">Contact</a>
+        </nav>
+        <p class="footer-copy">© Molten Motion. Demo store — no real payments.</p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Cart drawer -->
+  <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart">
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Your cart</h2>
+      <button type="button" class="cart-drawer__close" id="cart-close" aria-label="Close cart">Close</button>
+    </div>
+    <div class="cart-drawer__body" id="cart-body">
+      <!-- Cart items rendered by JS -->
+    </div>
+    <div class="cart-drawer__footer">
+      <div class="cart-drawer__total">
+        <span>Subtotal</span>
+        <span id="cart-total">$0</span>
+      </div>
+      <button type="button" class="cart-drawer__checkout" id="cart-checkout">Checkout (demo)</button>
+    </div>
+  </aside>
+
+  <!-- Checkout success modal (mock) -->
+  <div class="checkout-modal" id="checkout-modal" aria-hidden="true" role="dialog" aria-labelledby="checkout-modal-title">
+    <div class="checkout-modal__box">
+      <h2 class="checkout-modal__title" id="checkout-modal-title">Thanks for your order</h2>
+      <p class="checkout-modal__text">This is a demo. No payment was taken. Your cart has been cleared.</p>
+      <button type="button" class="checkout-modal__close" id="checkout-modal-close">Close</button>
+    </div>
+  </div>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

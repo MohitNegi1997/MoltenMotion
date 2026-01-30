@@ -1,0 +1,23 @@
+[
+  {
+    "id": "apparel",
+    "name": "Apparel",
+    "slug": "apparel",
+    "color": "#7C9CE8",
+    "image": "https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "accessories",
+    "name": "Accessories",
+    "slug": "accessories",
+    "color": "#E8B87C",
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "home",
+    "name": "Home",
+    "slug": "home",
+    "color": "#7CE8A8",
+    "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop"
+  }
+]
