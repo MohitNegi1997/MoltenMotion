@@ -76,7 +76,7 @@
 
 /* Tab underline (Vision section) */
 .tab-list {
-  display: flex;
+  display: inline-flex;
   gap: var(--space-md);
   margin-bottom: var(--space-xl);
   border-bottom: 2px solid var(--border-color);

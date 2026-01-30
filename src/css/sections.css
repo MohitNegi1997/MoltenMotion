@@ -114,13 +114,81 @@
 
 .vision__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: var(--space-lg);
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+/* Playful scatter: subtle rotation and offset per card */
+.vision__grid .product-card {
+  --scatter-y: 0;
+  --scatter-rotate: 0deg;
+  transform: translateY(var(--scatter-y)) rotate(var(--scatter-rotate));
+}
+.vision__grid .product-card:nth-child(4n + 1) {
+  --scatter-y: -6px;
+  --scatter-rotate: -0.6deg;
+}
+.vision__grid .product-card:nth-child(4n + 2) {
+  --scatter-y: 4px;
+  --scatter-rotate: 0.4deg;
+}
+.vision__grid .product-card:nth-child(4n + 3) {
+  --scatter-y: 2px;
+  --scatter-rotate: 0.5deg;
+}
+.vision__grid .product-card:nth-child(4n + 4) {
+  --scatter-y: -4px;
+  --scatter-rotate: -0.4deg;
+}
+.vision__grid .product-card:hover {
+  transform: translateY(-8px) scale(1.03) rotate(0deg);
+}
+
+@media (max-width: 900px) {
+  .vision__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+  .vision__grid .product-card:nth-child(4n + 1),
+  .vision__grid .product-card:nth-child(4n + 2),
+  .vision__grid .product-card:nth-child(4n + 3),
+  .vision__grid .product-card:nth-child(4n + 4) {
+    --scatter-y: 0;
+    --scatter-rotate: 0deg;
+  }
+  .vision__grid .product-card:nth-child(3n + 1) {
+    --scatter-y: -4px;
+    --scatter-rotate: -0.4deg;
+  }
+  .vision__grid .product-card:nth-child(3n + 2) {
+    --scatter-y: 3px;
+    --scatter-rotate: 0.35deg;
+  }
+  .vision__grid .product-card:nth-child(3n + 3) {
+    --scatter-y: -2px;
+    --scatter-rotate: 0.4deg;
+  }
 }
 
 @media (max-width: 600px) {
   .vision__grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+  .vision__grid .product-card:nth-child(3n + 1),
+  .vision__grid .product-card:nth-child(3n + 2),
+  .vision__grid .product-card:nth-child(3n + 3) {
+    --scatter-y: 0;
+    --scatter-rotate: 0deg;
+  }
+  .vision__grid .product-card:nth-child(odd) {
+    --scatter-y: -3px;
+    --scatter-rotate: -0.35deg;
+  }
+  .vision__grid .product-card:nth-child(even) {
+    --scatter-y: 2px;
+    --scatter-rotate: 0.35deg;
   }
 }
 

@@ -17,6 +17,22 @@ const cartClose = document.getElementById('cart-close');
 const cartCheckout = document.getElementById('cart-checkout');
 const checkoutModal = document.getElementById('checkout-modal');
 const checkoutModalClose = document.getElementById('checkout-modal-close');
+const snackbar = document.getElementById('snackbar');
+let snackbarTimeout = null;
+
+function showSnackbar(message) {
+  if (!snackbar) return;
+  const textEl = snackbar.querySelector('.snackbar__text');
+  if (textEl) textEl.textContent = message;
+  snackbar.classList.add('is-visible');
+  snackbar.setAttribute('aria-hidden', 'false');
+  if (snackbarTimeout) clearTimeout(snackbarTimeout);
+  snackbarTimeout = setTimeout(() => {
+    snackbar.classList.remove('is-visible');
+    snackbar.setAttribute('aria-hidden', 'true');
+    snackbarTimeout = null;
+  }, 3000);
+}
 
 function openCart() {
   cartDrawer?.classList.add('is-open');
@@ -125,7 +141,7 @@ function renderProductCard(product) {
         <p class="product-card__price">${formatPrice(product.price)}</p>
       </div>
     </a>
-    <button type="button" class="btn btn--primary" style="width: 100%; margin-top: 8px;" data-add-cart="${product.id}">Add to cart</button>
+    <button type="button" class="btn btn--primary" data-add-cart="${product.id}">Add to cart</button>
   `;
 
   const link = card.querySelector('[data-product-id]');
@@ -138,7 +154,10 @@ function renderProductCard(product) {
   addBtn?.addEventListener('click', (e) => {
     e.preventDefault();
     const p = allProducts.find((x) => x.id === product.id);
-    if (p) addToCart(p);
+    if (p) {
+      addToCart(p);
+      showSnackbar(`${p.name} added to cart`);
+    }
   });
 
   return card;
